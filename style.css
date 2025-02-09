@@ -54,6 +54,7 @@ nav i {
 
 .full h1 {
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .full i {
@@ -152,6 +153,17 @@ h1 span{
     rotate: -45deg;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1%;
+}
+
+.canvas1 i {
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10;
 }
 
 .canvas2 {
