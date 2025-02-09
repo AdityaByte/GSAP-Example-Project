@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     let main = document.querySelector(".main")
 
+    
+
     if (main) {
         let timeline = gsap.timeline({paused: true});
 
@@ -29,19 +31,22 @@ function canvasAnimation() {
     gsap.from(".canvas1", {
         opacity: 0,
         rotate: "45deg",
-        duration: 0.7
+        duration: 0.7,
+        ease: "back.out"
     }, "-=0.2")
 
     gsap.from(".canvas2 ", {
         opacity: 0,
         rotate: "-45deg",
-        duration: 0.7
+        duration: 0.7,
+        ease: "back.out"
     }, "-=0.2")
 
     gsap.from(".canvas3", {
         opacity: 0,
         x: "-50%",
-        duration: 0.7
+        duration: 0.7,
+        ease: "back.out"
     }, "-=0.2")
 }
 
@@ -123,7 +128,8 @@ function textAnimation() {
         duration: 0.6,
         y: -300,
         delay: 0.5,
-        stagger: 0.3
+        stagger: 0.3,
+        ease: "back.inOut"
     })
 
 }
@@ -164,8 +170,7 @@ function secondPageAnimation() {
             scroller: "body",
             start: "top 0%",
             end: "top -100%",
-            scrub: 5,
-            pin: false,
+            scrub: 5
         }
     })
 }
