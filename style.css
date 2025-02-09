@@ -1,0 +1,190 @@
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url("Gilroy-Bold.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gilroy;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+body {
+    overflow-x: hidden;
+    position: relative;
+/*     
+    background: url('bgimage.jpg') no-repeat center;
+    background-size: cover; */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 140px;
+}
+
+nav i {
+    font-weight: bold;
+    scale: 1.5;
+    cursor: pointer;
+}
+
+.full {
+    height: 100%;
+    width: 40%;
+    top: 0;
+    right: -40%;
+    position: fixed;
+    padding: 150px 60px;
+    background-color: rgba(0, 0, 0, 0.265);
+    backdrop-filter: blur(8px);
+}
+
+.full h1 {
+    margin-bottom: 10px;
+}
+
+.full i {
+    font-weight: 600;
+    font-weight: 25px;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    /* background-color: rgba(255, 0, 0, 0.8); */
+    background-color: #3E5879;
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+}
+
+
+.main {
+    position: relative;
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main h2 {
+    font-size: 2rem;
+    white-space: nowrap;
+}
+
+.main h1{
+    /* color: #213555; */
+    font-size: 10rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 2%;
+
+}
+
+h1 span{
+    display: inline-block;
+}
+
+.secondPart {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #111;
+}
+
+.secondPart h1 {
+    font-size: 30rem;
+    white-space: nowrap;
+    color: #213555;
+    font-weight: 700;
+
+}
+
+.thirdPart {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.thirdPart div{
+    height: 100%;
+    width: 50%;
+}
+
+.thirdPart .div2{
+    background-color: #111;
+}
+
+.canvas1 {
+    width: 60%;
+    height: 40%;
+    background-color: #D8C4B6;
+    position: absolute;
+    rotate: -45deg;
+    top: 0;
+    left: 0;
+}
+
+.canvas2 {
+    width: 60%;
+    height: 40%;
+    background-color: #3E5879;
+    position: absolute;
+    rotate: 45deg;
+    top: 0;
+    right: 0;
+}
+
+.canvas3 {
+    width: 50%;
+    height: 10%;
+    background-color: rgb(33, 23, 25);
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas3 h2 {
+    font-size: 25px;
+    font-weight: bold;
+    background: url('bgimage.jpg') no-repeat center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.part2 {
+    opacity: 0;
+}
