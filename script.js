@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
         timeline
             .add(textAnimation())
             .add(h2Animation())
-            .add(canvasAnimation());
+            .add(canvasAnimation())
+            .add(secondPageAnimation())
+            .add(thirdPartAnimation());
 
         main.addEventListener("mouseenter", ()=> {
             timeline.play()
@@ -20,27 +22,26 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
         task1();
-        secondPageAnimation();
     }
 })
 
 function canvasAnimation() {
-    let canvas1 = document.querySelector(".canvas1")
-    let canvas2 = document.querySelector(".canvas2")
+    // let canvas1 = document.querySelector(".canvas1")
+    // let canvas2 = document.querySelector(".canvas2")
 
-    gsap.from(".canvas1", {
-        opacity: 0,
-        rotate: "45deg",
-        duration: 0.7,
-        ease: "back.out"
-    }, "-=0.2")
+    // gsap.from(".canvas1", {
+    //     opacity: 0,
+    //     rotate: "45deg",
+    //     duration: 0.7,
+    //     ease: "back.out"
+    // }, "-=0.2")
 
-    gsap.from(".canvas2 ", {
-        opacity: 0,
-        rotate: "-45deg",
-        duration: 0.7,
-        ease: "back.out"
-    }, "-=0.2")
+    // gsap.from(".canvas2 ", {
+    //     opacity: 0,
+    //     rotate: "-45deg",
+    //     duration: 0.7,
+    //     ease: "back.out"
+    // }, "-=0.2")
 
     gsap.from(".canvas3", {
         opacity: 0,
@@ -162,7 +163,6 @@ function h2Animation() {
 
 function secondPageAnimation() {
     gsap.to(".secondPart h1", {
-        // transform: "translate(-70%)",
         x: "-70%",
         duration: 2,
         scrollTrigger: {
@@ -173,4 +173,29 @@ function secondPageAnimation() {
             scrub: 5
         }
     })
+}
+
+
+function thirdPartAnimation() {
+    let contents = document.querySelectorAll(".thirdPart .content");
+    let currentIndex = 0;
+
+    gsap.to(contents, {
+        scrollTrigger: {
+            trigger: ".thirdPart",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+            pin: true,
+            onUpdate: (self) => {
+                let newIndex = Math.floor(self.progress * (contents.length - 1 ));
+                if (newIndex !== currentIndex) {
+                    contents[currentIndex].classList.remove("active");
+                    contents[newIndex].classList.add("active");
+                    currentIndex = newIndex;
+                }
+            }
+        }
+    })
+
 }

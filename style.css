@@ -74,7 +74,7 @@ nav i {
     width: 20px;
     height: 20px;
     /* background-color: rgba(255, 0, 0, 0.8); */
-    background-color: #3E5879;
+    background: url('bgimage.jpg') no-repeat center;
     border-radius: 50%;
     position: fixed;
     top: 0;
@@ -125,29 +125,75 @@ h1 span{
 .secondPart h1 {
     font-size: 30rem;
     white-space: nowrap;
-    color: #213555;
+    /* color: #213555; */
     font-weight: 700;
+    background: url('bgimage.jpg') no-repeat center;
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 }
 
 .thirdPart {
-    height: 100%;
+    position: relative;
+    height: 100vh;
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
 }
 
-.thirdPart div{
+.thirdPart > .content{
+    position: absolute;
+    width: 100%;
     height: 100%;
-    width: 50%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s, transform 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
 }
 
-.thirdPart .div2{
+.thirdPart > div.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.div1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4%;
+    width: 50%;
+    height: 100%;
+}
+
+.div1 h1 {
+    white-space: wrap;
+}
+
+.div2{
     background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.div2 img {
+    border-radius: 10px;
+    background-position: center;
+    object-fit: contain;
 }
 
 .canvas1 {
-    width: 60%;
-    height: 40%;
+    width: 80%;
+    height: 2%;
     background-color: #D8C4B6;
     position: absolute;
     rotate: -45deg;
@@ -167,8 +213,8 @@ h1 span{
 }
 
 .canvas2 {
-    width: 60%;
-    height: 40%;
+    width: 80%;
+    height: 2%;
     background-color: #3E5879;
     position: absolute;
     rotate: 45deg;
@@ -200,3 +246,4 @@ h1 span{
 .part2 {
     opacity: 0;
 }
+
